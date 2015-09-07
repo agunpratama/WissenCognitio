@@ -105,11 +105,17 @@ init' x = x
 
 --pembatas
 
-max' x = x
+max' x y
+  | x > y = x
+  | x < y = y
+  | otherwise = x
 
 --pembatas
 
-min' x = x
+min' x y
+  | x > y = y
+  | x < y = x
+  | otherwise = y
 
 --pembatas
 
