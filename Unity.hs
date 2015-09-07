@@ -205,11 +205,16 @@ sort' x = x
 
 --pembatas
 
-minimum' x = x
-
+minimum' x y
+  | x < y = x
+  | x > y = y
+  | otherwise = x
 --pembatas
 
-maximum' x = x
+maximum' x y
+  | x < y = x
+  | x > y = y
+  | otherwise = x
 
 --pembatas
 
