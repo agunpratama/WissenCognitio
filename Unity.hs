@@ -143,7 +143,7 @@ zip3' x = x
 
 --pembatas
 
-sum' x = x
+sum' (a,b) = b
 
 --pembatas
 
