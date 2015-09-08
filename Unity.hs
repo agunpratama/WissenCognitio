@@ -19,7 +19,9 @@ take' a (x:xs) = x : take' (a-1) (xs)
 
 --pembatas
 
-drop' x = x
+drop' x [] = []
+drop' 0 (x:xs) = (x:xs)
+drop' a (x:xs) = x : drop' (a) (xs)
 
 --pembatas
 
