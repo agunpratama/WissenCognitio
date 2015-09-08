@@ -13,7 +13,9 @@ null' x
 
 --pembatas
 
-take' x 
+take' x [] = []
+take' 0 (x:xs) = []
+take' a (x:xs) = x : take' (a-1) (xs)
 
 --pembatas
 
