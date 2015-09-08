@@ -77,7 +77,10 @@ scanl1' x = x
 
 --pembatas
 
-elem' x = x
+elem' a [] = False
+elem' a (x:xs)
+  | a == x = True
+
 
 --pembatas
 
@@ -85,7 +88,7 @@ notElem' x = x
 
 --pembatas
 
-head' [x:xs] = x
+head' (x:xs) = x
 
 --pembatas
 
@@ -99,11 +102,12 @@ reverse' x = x
 
 --pembatas
 
-last' x = x
+last' [x] = x
+last' (x:xs) = last' xs
 
 --pembatas
 
-tail' [x:xs] = xs
+tail' (x:xs) = xs
 
 --pembatas
 
@@ -149,11 +153,15 @@ zip3' x = x
 
 --pembatas
 
-sum' x = x
+sum' [] = 0
+sum' [x] = x
+sum' (x:xs) = x + sum' (xs)
 
 --pembatas
 
-product' x = x
+product' [] = 1
+product' [x] = x
+product' (x:xs) = x * product' (xs)
 
 --pembatas
 
