@@ -1,7 +1,7 @@
 -- First Assignment
 -- Reimplement Haskell function
 -- DON'T USE GOOGLE
-module Template where
+module Unity where
 
 import Data.List
 
@@ -13,7 +13,7 @@ null' x
 
 --pembatas
 
-take' x = x
+take' x 
 
 --pembatas
 
@@ -81,7 +81,7 @@ notElem' x = x
 
 --pembatas
 
-head' x = x
+head' [x:xs] = x
 
 --pembatas
 
@@ -97,7 +97,7 @@ last' x = x
 
 --pembatas
 
-tail' x = x
+tail' [x:xs] = xs
 
 --pembatas
 
@@ -115,7 +115,7 @@ max' x y
 min' x y
   | x > y = y
   | x < y = x
-  | otherwise = y
+  | otherwise = x
 
 --pembatas
 
@@ -143,7 +143,7 @@ zip3' x = x
 
 --pembatas
 
-sum' (a,b) = b
+sum' x = x
 
 --pembatas
 
@@ -205,11 +205,11 @@ sort' x = x
 
 --pembatas
 
-minimum' x y
+minimum' x = x
 
 --pembatas
 
-maximum' x y
+maximum' x = x
 
 --pembatas
 
