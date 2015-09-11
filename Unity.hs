@@ -86,8 +86,8 @@ elem' a (x:xs)
 
 notElem' a [] = True
 notElem' a (x:xs)
-  | a == x = True
-  | otherwise = elem' a xs
+  | a == x = False
+  | otherwise = notElem' a xs
 
 --pembatas
 
@@ -117,7 +117,8 @@ tail' (x:xs) = xs
 
 --pembatas
 
-init' x = x
+init' [x] = 1
+--init' (x:xs) = [x] : last' (x:xs) - last'
 
 --pembatas
 
