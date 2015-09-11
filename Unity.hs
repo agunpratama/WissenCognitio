@@ -162,13 +162,13 @@ zip3' x = x
 
 sum' [] = 0
 sum' [x] = x
---sum' (x:xs) =
+sum' (x:xs) = x + sum' (xs)
 
 --pembatas
 
 product' [] = 1
 product' [x] = x
---product' (x:xs) =
+product' (x:xs) = x * product' (xs)
 
 --pembatas
 
