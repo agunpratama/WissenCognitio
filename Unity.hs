@@ -8,8 +8,8 @@ import Data.List
 -- 1.a
 
 null' x
-  | x == [] = "True"
-  | otherwise = "False"
+  | x == [] = True
+  | otherwise = False
 
 --pembatas
 
@@ -80,11 +80,14 @@ scanl1' x = x
 elem' a [] = False
 elem' a (x:xs)
   | a == x = True
-
+  | otherwise = elem' a xs
 
 --pembatas
 
-notElem' x = x
+notElem' a [] = True
+notElem' a (x:xs)
+  | a == x = True
+  | otherwise = elem' a xs
 
 --pembatas
 
@@ -93,17 +96,20 @@ head' (x:xs) = x
 --pembatas
 
 length' [] = 0
-length' [x] = 1
+length' [a] = 1
 length' (x:xs) = 1 + length' (xs)
 
 --pembatas
 
-reverse' x = x
+reverse' [] = []
+reverse' [x] = [x]
+reverse' [x,y] = [y,x]
+reverse' (x:xs) = reverse' (xs) ++ [x]
 
 --pembatas
 
 last' [x] = x
-last' (x:xs) = last' xs
+last' (x:xs) = last' (xs)
 
 --pembatas
 
@@ -125,7 +131,7 @@ max' x y
 min' x y
   | x > y = y
   | x < y = x
-  | otherwise = x
+  | otherwise = y
 
 --pembatas
 
@@ -155,13 +161,13 @@ zip3' x = x
 
 sum' [] = 0
 sum' [x] = x
-sum' (x:xs) = x + sum' (xs)
+--sum' (x:xs) =
 
 --pembatas
 
 product' [] = 1
 product' [x] = x
-product' (x:xs) = x * product' (xs)
+--product' (x:xs) =
 
 --pembatas
 
