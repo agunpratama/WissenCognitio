@@ -41,12 +41,14 @@ filter' x = x
 
 --pembatas
 
---blom slesai
-delete' a (x:xs) = (x:xs)
+delete' a [] = []
+delete' a (x:xs)
+  | a == x = xs
+  | otherwise = [x] ++ (delete' a xs)
 
 --pembatas
 
-deleteAll' x = x
+deleteAll' (x:xs) = []
 
 --pembatas
 
