@@ -117,8 +117,8 @@ tail' (x:xs) = xs
 
 --pembatas
 
-init' [x] = 1
---init' (x:xs) = [x] : last' (x:xs) - last'
+init' [x] = []
+init' (x:xs) = x : init' (xs)
 
 --pembatas
 
