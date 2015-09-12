@@ -41,7 +41,8 @@ filter' x = x
 
 --pembatas
 
-delete' x = x
+--blom slesai
+delete' a (x:xs) = (x:xs)
 
 --pembatas
 
