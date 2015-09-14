@@ -48,7 +48,10 @@ delete' a (x:xs)
 
 --pembatas
 
-deleteAll' (x:xs) = []
+deleteAll' a [] =[]
+deleteAll' a (x:xs) 
+  |(a == x) = deleteAll' a xs
+  |otherwise = [x] ++ deleteAll' a xs
 
 --pembatas
 
@@ -60,7 +63,9 @@ foldl1' x = x
 
 --pembatas
 
-zip' x = x
+zip' [] [] = []
+zip' (x:xs) [] = []
+zip' (x:xs) (y:ys) = (x,y) : zip' (xs) (ys)
 
 --pembatas
 
@@ -152,11 +157,17 @@ intercalate' x = x
 
 --pembatas
 
-and' x = x
+and' [] = True
+and' (x:xs)
+  | x == False = False
+  | otherwise = and' xs
 
 --pembatas
 
-or' x = x
+or' [] = False
+or' (x:xs)
+  | x == True = True
+  | otherwise = or' xs
 
 --pembatas
 
