@@ -37,7 +37,7 @@ map' x = x
 
 --pembatas
 
-filter' x = x
+filter' x [] = []
 
 --pembatas
 
@@ -49,8 +49,8 @@ delete' a (x:xs)
 --pembatas
 
 deleteAll' a [] =[]
-deleteAll' a (x:xs) 
-  |(a == x) = deleteAll' a xs
+deleteAll' a (x:xs)
+  |a == x = deleteAll' a xs
   |otherwise = [x] ++ deleteAll' a xs
 
 --pembatas
@@ -261,8 +261,9 @@ union' x = x
 
 --pembatas
 
-intersect' x = x
-
+-- intersect' [] [] =[]
+-- intersect' [n] [n] = [n]
+-- intersect' (x:xs) (y:ys) = x
 --pembatas
 
 group' x = x
