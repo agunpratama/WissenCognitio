@@ -37,7 +37,8 @@ map' x = x
 
 --pembatas
 
-filter' x [] = []
+filter' n [] = []
+filter' [] n = []
 
 --pembatas
 
@@ -65,6 +66,7 @@ foldl1' x = x
 
 zip' [] [] = []
 zip' (x:xs) [] = []
+zip' [] (x:xs) = []
 zip' (x:xs) (y:ys) = (x,y) : zip' (xs) (ys)
 
 --pembatas
@@ -73,7 +75,9 @@ zipWith' x = x
 
 --pembatas
 
-nth' x = x
+nth' (x:xs) a
+  | a == 0 = x
+  | a /= 0 = nth' xs (a-1)
 
 --pembatas
 
@@ -191,7 +195,8 @@ words' x = x
 
 --pembatas
 
-lines' x = x
+lines' "" = []
+--lines'
 
 --pembatas
 
@@ -241,11 +246,11 @@ sort' x = x
 
 --pembatas
 
-minimum' x = x
+minimum' [x] = x
 
 --pembatas
 
-maximum' x = x
+maximum' [x] = x
 
 --pembatas
 
@@ -261,9 +266,11 @@ union' x = x
 
 --pembatas
 
--- intersect' [] [] =[]
--- intersect' [n] [n] = [n]
--- intersect' (x:xs) (y:ys) = x
+intersect' [] [] =[]
+intersect' [n] [n] = [n]
+--intersect' (x:xs) (y:ys) = x
+
+
 --pembatas
 
 group' x = x
