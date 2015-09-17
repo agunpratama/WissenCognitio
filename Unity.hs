@@ -178,7 +178,11 @@ or' (x:xs)
 
 --pembatas
 
-zip3' x = x
+zip3' [] _ _ = []
+zip3' _ [] _ = []
+zip3' _ _ [] = []
+zip3' (x:xs) (y:ys) (z:zs) = (x,y,z) : zip3' (xs) (ys) (zs)
+
 
 --pembatas
 
@@ -198,8 +202,8 @@ words' x = x
 
 --pembatas
 
-lines' "" = []
---lines'
+-- lines' "" = []
+-- lines'
 
 --pembatas
 
@@ -223,7 +227,8 @@ concatMap' x = x
 
 --pembatas
 
-all' x = x
+--all' n [] = True
+--all' n (x:xs)
 
 --pembatas
 
@@ -269,9 +274,8 @@ union' x = x
 
 --pembatas
 
-intersect' [] [] =[]
---intersect' (x:xs) (y:ys) = x
-
+-- intersect' [] [] =[]
+-- intersect' (x:xs) (y:ys) = x
 
 --pembatas
 
