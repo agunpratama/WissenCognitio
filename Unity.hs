@@ -33,12 +33,15 @@ snd' (a,b) = b
 
 --pembatas
 
-map' x = x
+map' a [] = []
+map' a (x:xs) = [(a x)] ++ map' a xs
 
 --pembatas
 
 filter' n [] = []
-filter' [] n = []
+filter' n (x:xs)
+  | n x == True = [x] ++ filter' n xs
+  | otherwise = filter' n (xs)
 
 --pembatas
 
@@ -267,7 +270,6 @@ union' x = x
 --pembatas
 
 intersect' [] [] =[]
-intersect' [n] [n] = [n]
 --intersect' (x:xs) (y:ys) = x
 
 
