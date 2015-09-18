@@ -282,11 +282,13 @@ sort' x = x
 
 minimum' [x] = x
 minimum' (x:xs) = minimum' (x:xs)
+--completed
 
 --pembatas
 
 maximum' [x] = x
 maximum' (x:xs) = maximum' (x:xs)
+--completed
 
 --pembatas
 
