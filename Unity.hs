@@ -84,7 +84,10 @@ zip' (x:xs) (y:ys) = (x,y) : zip' (xs) (ys)
 
 --pembatas
 
-zipWith' x = x
+zipWith' n [] [] = []
+zipWith' n (x:xs) [] = []
+zipWith' n [] (x:xs) = []
+zipWith' n (x:xs) (y:ys) = [(n x y)] ++ (zipWith' n xs ys)
 
 --pembatas
 
@@ -321,7 +324,10 @@ partition' x = x
 
 --pembatas
 
-replicate' x = x
+-- replicate' x y
+--   | x == 0 = []
+--   | otherwise = replicate' y x
+
 
 --pembatas
 -- First Assignment
