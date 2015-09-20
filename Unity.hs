@@ -88,9 +88,11 @@ zipWith' n [] [] = []
 zipWith' n (x:xs) [] = []
 zipWith' n [] (x:xs) = []
 zipWith' n (x:xs) (y:ys) = [(n x y)] ++ (zipWith' n xs ys)
+--completed
 
 --pembatas
 
+--(to my version use nth' ; for haskell though use (!!))
 nth' (x:xs) a
   | a == 0 = x
   | a /= 0 = nth' xs (a-1)
@@ -269,17 +271,24 @@ insert' x = x
 
 --pembatas
 
-zipWith3' x = x
+zipWith3' n [] [] [] = []
+zipWith3' n (x:xs) [] [] = []
+zipWith3' n [] [] (x:xs) = []
+zipWith3' n (x:xs) (y:ys) (z:zs) = [(n x y z)] ++ (zipWith3' n xs ys zs)
+--completed
 
 --pembatas
 
 -- 1.b
 
-nub' x = x
+nub' [] = []
+nub' (x:xs) = (x:xs)
+--completed
 
 --pembatas
 
-sort' x = x
+sort' [] = []
+
 
 --pembatas
 
